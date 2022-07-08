@@ -1,0 +1,23 @@
+<div class = "container">
+    <div class = "card">
+        <h2 class = "text-center">Book List</h2>
+        <div class = "card.body">
+            <table class = "table table-stripped">
+                <thead>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>author</th>
+                    <th>PublishmentDate</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+                        <td>{{book.id}}</td>
+                        <td>{{book.name}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.dateOfPublish}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<h4>Find Book</h4>
+<form (ngSubmit) = "onSubmit()">
+    <div class = "form-group">
+        <label>id</label>
+        <input type = "number" class = "form-control" id="id"
+            [(ngModel)] = "id" name = "id">
+    </div>
+    <button class = "btn btn-success" type ="submit">submit</button>
+</form>
+
+<div class = "container">
+    <div class = "card">
+        <h2 class = "text-center">Your Book</h2>
+        <div class = "card.body">
+            <table class = "table table-stripped">
+                <thead>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>author</th>
+                    <th>PublishmentDate</th>
+                </thead>
+                <tbody>
+                        <td>{{this.idnum}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.author}}</td>
+                        <td>{{this.dateOfPublish}}</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

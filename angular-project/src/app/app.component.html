@@ -1,0 +1,27 @@
+<nav class = "navbar navbar-expand-sm bg-primary navbar-dark ">
+  <ul class = "navbar-nav">
+    <li class ="nav-item">
+        <a routerLink="books" routerLinkActive="active" class="nav-link">Book List </a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="create-book" routerLinkActive="active" class="nav-link">Add Book </a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="update-book" routerLinkActive="active" class="nav-link">Update Book </a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="delete-book" routerLinkActive="active" class="nav-link">Delete Book </a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="get-book" routerLinkActive="active" class="nav-link">Get Book </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<h1 class = "text-center"> Book List </h1>
+<div class = "container">
+  <router-outlet></router-outlet>
+</div>
+
