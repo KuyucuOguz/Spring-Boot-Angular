@@ -22,7 +22,7 @@ export class BookGetComponent implements OnInit {
    }
 
   public book:Book = new Book();
-  
+  errorMassage:String = "";
 
   ngOnInit(): void {
   }
@@ -36,6 +36,14 @@ export class BookGetComponent implements OnInit {
       this.author = data.author;
       this.name = data.name;
       this.idnum = data.id;
+      this.errorMassage = "";
+    },
+    error=>{
+      this.errorMassage = "book with id " +  this.id + " does not exist";
+      this.dateOfPublish = "";
+      this.author = "";
+      this.name = "";
+      this.idnum = 404;
     });
     
   }

@@ -9,7 +9,7 @@ import { BookService } from '../book.service';
 })
 export class CreateBookComponent implements OnInit {
   book:Book = new Book();
-
+  errorMassage:String = "";
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
@@ -20,6 +20,11 @@ export class CreateBookComponent implements OnInit {
   saveBook(){
     this.bookService.addBook(this.book).subscribe(data =>{
       console.log(data);
-    });
+      this.errorMassage = "";
+    },
+    error=>{
+      this.errorMassage = "Error: book with id: " + this.book.id + " already exist";
+      console.log(error);
+    });;
   }
 }
