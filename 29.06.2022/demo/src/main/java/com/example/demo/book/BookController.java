@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -34,7 +34,7 @@ public class BookController {
     }
  
     @PostMapping("/post")
-    public Book post(@RequestBody Book book){
+    public Book post(@RequestBody Book book) throws Exception{
         return service.post(book);
     }
 
@@ -43,8 +43,8 @@ public class BookController {
         return service.delete(id);
     }
 
-    @PutMapping("/put")
-    public Book put(int id, @RequestBody Book book){
+    @PutMapping("/put/{id}")
+    public Book put(@PathVariable("id") int id, @RequestBody Book book){
         return service.put(id, book);
     }
     

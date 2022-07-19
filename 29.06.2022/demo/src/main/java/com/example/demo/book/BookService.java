@@ -23,16 +23,19 @@ public class BookService {
         return bookRepository.findById(id).get();
     }
 
-    public Book post(Book book){
-
-        return bookRepository.save(book);
+    public Book post(Book book)throws Exception{
+        if(bookRepository.findById(book.getId()).isEmpty())
+            return bookRepository.save(book);
+        else{
+            throw( new Exception("book already exist"));
+        }
+        
     }
 
     public Book delete(int id){
         Book book = bookRepository.findById(id).get();
         bookRepository.deleteById(id);
-        return book;
-        
+        return book; 
     }
     public Book put(int id, Book book){
         Book existingBook = bookRepository.findById(id).get();
